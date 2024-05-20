@@ -10,6 +10,9 @@ Login User
    <form class="form-with-validation" action="/user/login/" method="post">
       {% csrf_token %}
       {{form}}
+      {% if request.POST.next %}
+      <input type="hidden" name='text' value='{{request.POST.next}}'>
+      {% endif %}
       <button class='form-submit'>Submit</button>
    </form>
 </article>
