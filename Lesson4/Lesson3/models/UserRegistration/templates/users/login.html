@@ -7,7 +7,7 @@ Login User
 {% block content %}
 <article>
    <h1>Login User</h1>
-   <form class="form-with-validation" action="/user/login/" method="post">
+   <form class="form-with-validation" action="{%url 'users:login'%}" method="post">
       {% csrf_token %}
       {{form}}
       {% if request.POST.next %}
